@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Boyfriend?</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  .gif {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  .button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .no {
+    background-color: #ff9999;
+  }
+</style>
+</head>
+<body>
+  <h1>Will You Be My Boyfriend?</h1>
+  <img src="https://c.tenor.com/jjM8wEXXNqwAAAAd/kiss.gif">
+  <form id="boyfriendForm">
+    <div class="button-container">
+      <button type="button" class="button yes">Yes!</button>
+      <button type="button" class="button no">No</button>
+    </div>
+  </form>
+
+  <script>
+    const yesButton = document.querySelector('.yes');
+
+    yesButton.addEventListener('click', function() {
+      yesButton.textContent = 'Yayyy!!!';
+      yesButton.style.backgroundColor = '#66ff66';
+      yesButton.style.cursor = 'not-allowed';
+      yesButton.disabled = true;
+    });
+
+    const noButton = document.querySelector('.no');
+    let noWidth = 200; // initial width of the "No" button
+
+    noButton.addEventListener('click', function() {
+      noWidth -= 20; // decrease the width by 20 pixels on each click
+      if (noWidth > 0) {
+        noButton.style.width = noWidth + 'px';
+      } else {
+        noButton.textContent = 'No more clicks!';
+        noButton.style.cursor = 'not-allowed';
+        noButton.disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>
